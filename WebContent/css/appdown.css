@@ -1,0 +1,77 @@
+body {
+	background: #f2f2f2 url(../img/bg.jpg) center 0 no-repeat;
+	background-size: 1000px 231px;
+}
+
+.app_top {
+	width: 100%;
+	padding-top: 18px;
+	height: 253px;
+	background: url(../img/wap_top.png) center 18px no-repeat;
+	background-size: 111px 253px;
+}
+
+.app_downbox {
+	height: 150px;
+	border-bottom: 1px solid #ccc;
+}
+
+.app_downbox a {
+	height: 44px;
+	width: 264px;
+	display: inline-block;
+	margin-top: 20px;
+	background: url(../img/icon_iosdown.png) no-repeat;
+	clear: both;
+	text-indent: -99999px;
+	background-size: 264px 44px;
+}
+
+.app_downbox a.android_btn {
+	background-image: url(../img/icon_androiddown.png)
+}
+
+.wrap_app {
+	width: 320px;
+	margin: 0 auto;
+}
+
+.app_com {
+	padding-left: 27px;
+}
+
+.app_itembox {
+	border-bottom: 1px solid #ccc;
+	height: 88px;
+}
+
+.app_itembox img {
+	width: 245px;
+	height: 88px;
+}
+
+.app_footer {
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.4rem;
+	color: #666;
+}
+
+.weixinbg {
+	background-color: #000;
+	opacity: 0.3;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+}
+
+.weixin_tip {
+	background: url(../img/weixin_down.png) center 0 no-repeat;
+	position: absolute;
+	top: 8px;
+	width: 266px;
+	height: 207px;
+	right: 26px;
+	background-size: 266px 207px;
+}

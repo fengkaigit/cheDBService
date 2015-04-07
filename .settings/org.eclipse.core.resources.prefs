@@ -1,0 +1,11 @@
+#Mon Apr 06 16:50:18 CST 2015
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/pages=UTF-8
+encoding//WebContent/WEB-INF/pages/servicesubject.jsp=gbk
+encoding//WebContent/js=UTF-8
+encoding//WebContent/js/carclean.js=gbk
+encoding//WebContent/js/carmaintains.js=gbk
+encoding//WebContent/js/searchservice.js=gbk
+encoding//WebContent/js/servicelist.js=UTF-8
+encoding//src/com/chedb/controller/ServiceController.java=UTF-8
+encoding/<project>=UTF-8
