@@ -57,6 +57,9 @@ public class UserController {
 				jsonStr = "nouser";
 				user.setOk(ok);
 				user.setLoginmess(jsonStr);
+				if(RequestUtils.getReqJsonp(req,res,user)){
+					return null;
+				}
 				return user;
 			}
 			if (user.getPasswd() == null) {
