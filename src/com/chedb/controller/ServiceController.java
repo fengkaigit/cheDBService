@@ -322,7 +322,7 @@ public class ServiceController {
 
 	@RequestMapping("/recommendService.do")
 	@ResponseBody
-	public List<ModelService> recommendService(HttpServletRequest req)
+	public List<ModelService> recommendService(HttpServletRequest req,HttpServletResponse res)
 			throws Exception {
 		List<ModelService> listAppraise = new ArrayList<ModelService>();
 		String classId = req.getParameter("classId");
@@ -335,6 +335,9 @@ public class ServiceController {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+		if(RequestUtils.getReqJsonp(req,res,listAppraise)){
+			  return null;
+	    }
 		return listAppraise;
 	}
 

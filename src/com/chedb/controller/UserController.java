@@ -229,7 +229,7 @@ public class UserController {
 
 	@RequestMapping("/chooseCar.do")
 	@ResponseBody
-	public String chooseCar(HttpServletRequest req) throws Exception {
+	public String chooseCar(HttpServletRequest req,HttpServletResponse res) throws Exception {
 		String appId = req.getParameter("appId");
 		String carId = req.getParameter("carId");
 		String jsonStr = "failed";
@@ -238,12 +238,15 @@ public class UserController {
 		if (userService.addChoosedCarByAppId(carId, appId) == true) {
 			jsonStr = "success";
 		}
+		if(RequestUtils.getReqJsonp(req,res,jsonStr)){
+			  return null;
+	    }
 		return jsonStr;
 	}
 
 	@RequestMapping("/queryChoosedCarItemByUser.do")
 	@ResponseBody
-	public List<ModelCarYear> queryChoosedCarItemByUser(HttpServletRequest req)
+	public List<ModelCarYear> queryChoosedCarItemByUser(HttpServletRequest req,HttpServletResponse res)
 			throws Exception {
 
 		String userId = req.getParameter("userId");
@@ -266,6 +269,9 @@ public class UserController {
 		// jsonStr = GsonUtil.getGson().toJson(listCar);
 		// }
 		// return jsonStr;
+		if(RequestUtils.getReqJsonp(req,res,listCar)){
+			  return null;
+	    }
 		return listCar;
 	}
 

@@ -290,7 +290,7 @@ public class ServiceDaoImpl implements ServiceDao {
 			String start, String count, String latitude, String longitude) {
 		String sql = "select * from provider where status=1 and level=1 and id in(select provider_id from service_provider where service_id='"
 				+ serviceId + "') ";
-		// Ä¬ÈÏ°´Î»ÖÃÅÅÐò
+		// Ä¬ï¿½Ï°ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (latitude != null && latitude.length() > 0 && longitude != null
 				&& longitude.length() > 0) {
 			sql += " order by abs(latitude-" + latitude + ")+abs(longitude-"
@@ -350,8 +350,8 @@ public class ServiceDaoImpl implements ServiceDao {
 
 	public int getAppraiseCountByServiceId(String serviceClassId,
 			String serviceId) {
-		String sql = "SELECT count(1) as count FROM service_appraise where service_class_id='"
-				+ serviceClassId + "' and enable=1";
+		String sql = "SELECT count(1) as count FROM service_appraise as a,user as u where a.service_class_id='"
+				+ serviceClassId + "' and a.enable=1 and a.user_id=u.no";
 		Integer counti = this.jdbcTemplate.queryForObject(sql,
 				java.lang.Integer.class);
 		int count = 0;

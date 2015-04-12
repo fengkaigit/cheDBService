@@ -205,6 +205,7 @@ public class ProviderController {
 	public ModelProvider queryProviderById(HttpServletRequest req,HttpServletResponse res)
 			throws Exception {
 		String providerId = req.getParameter("providerId");
+		String showMap = req.getParameter("showMap");
 		// String jsonStr = "failed";
 		ModelProvider provider = this.providerService
 				.queryProviderById(providerId);
@@ -214,7 +215,8 @@ public class ProviderController {
 //			userDaoImpl.addUserConfig("3002", appId, providerId);
 			userService.addUserConfig("3002", appId, providerId);
 		}
-		this.providerService.appendBrowseCount(providerId);
+		if(showMap==null)
+		     this.providerService.appendBrowseCount(providerId);
 		if(RequestUtils.getReqJsonp(req,res,provider)){
 			  return null;
 	    }

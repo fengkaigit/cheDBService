@@ -2,23 +2,27 @@ package com.chedb.model;
 
 public class ModelProviderItem  implements java.io.Serializable {
 
-	private String itemId;// ÏîÄ¿ID
+	private String itemId;// ï¿½ï¿½Ä¿ID
 	
-	private String providerId;//ÉÌ¼ÒID
+	private String providerId;//ï¿½Ì¼ï¿½ID
 	private String sysItemId;//
 	private String sysItemName;
 	
-	private String title;	// ÏîÄ¿Ãû³Æ
-	private String summary;	// ÏîÄ¿ÕªÒª
+	private String title;	// ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½
+	private String summary;	// ï¿½ï¿½Ä¿ÕªÒª
 	
-//	private int browse;		// ä¯ÀÀÈËÊý
-	private int business;	// ³É½»ÈËÊý
+//	private int browse;		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private int business;	// ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	private float price;	// ¼Û¸ñ
-	private float priceOld;	// ÕÛ¿Û
+	private float price;	// ï¿½Û¸ï¿½
+	private float priceOld;	// ï¿½Û¿ï¿½
 	
-//	private float score;	// ×ÛºÏµÃ·Ö	
-//	private int scoreCount;	// ´ò·ÖÈËÊý
+	private String priceStr;
+	
+	private String priceOldStr;
+	
+//	private float score;	// ï¿½ÛºÏµÃ·ï¿½	
+//	private int scoreCount;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	private String remark;
 
@@ -105,6 +109,19 @@ public class ModelProviderItem  implements java.io.Serializable {
 	public void setSysItemName(String sysItemName) {
 		this.sysItemName = sysItemName;
 	}
+	public String getPriceStr() {
+		return priceStr;
+	}
+	public void setPriceStr(String priceStr) {
+		this.priceStr = priceStr;
+	}
+	public String getPriceOldStr() {
+		return priceOldStr;
+	}
+	public void setPriceOldStr(String priceOldStr) {
+		this.priceOldStr = priceOldStr;
+	}
+	
 
 }
 

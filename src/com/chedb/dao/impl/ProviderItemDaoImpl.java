@@ -2,6 +2,7 @@ package com.chedb.dao.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -110,14 +111,14 @@ public class ProviderItemDaoImpl implements ProviderItemDao {
 	}
 
 	/**
-	 * ÒÆ¶¯ÏîÄ¿Î»ÖÃ£¬»¥»»µ±Ç°ÏîÄ¿ºÍÄ¿±êÏîÄ¿µÄÅÅÐòÖµ
+	 * ï¿½Æ¶ï¿½ï¿½ï¿½Ä¿Î»ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Ä¿ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 	 * 
 	 * @param type
-	 *            -1ÉÏÒÆ£¬1ÏÂÒÆ
+	 *            -1ï¿½ï¿½ï¿½Æ£ï¿½1ï¿½ï¿½ï¿½ï¿½
 	 * @param itemId
-	 *            µ±Ç°ÏîÄ¿
+	 *            ï¿½ï¿½Ç°ï¿½ï¿½Ä¿
 	 * @param targetItemId
-	 *            ÒÆ¶¯Ä¿±êÏîÄ¿
+	 *            ï¿½Æ¶ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ä¿
 	 * @return
 	 */
 	public boolean moveItem(String itemId, String targetItemId) {
@@ -147,7 +148,7 @@ public class ProviderItemDaoImpl implements ProviderItemDao {
 	}
 
 	/**
-	 * mode : 0±íÊ¾²éÑ¯·ûºÏÌõ¼þµÄÈ«²¿£¬1±íÊ¾²éÑ¯Ç°Ãæ¶àÉÙÌõ£¬2±íÊ¾²éÑ¯ºóÃæËùÓÐÊý¾Ý
+	 * mode : 0ï¿½ï¿½Ê¾ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½Ê¾ï¿½ï¿½Ñ¯Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½Ê¾ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public List<ModelProviderItem> getProviderItemByProviderId(int mode,
 			String providerId, String strSysItemList, String priceStart,
@@ -173,7 +174,7 @@ public class ProviderItemDaoImpl implements ProviderItemDao {
 	}
 
 	/**
-	 * ²éÑ¯ÉÌ¼ÒµÄÄ³¸öÏµÍ³ÏîÄ¿ÏÂÓÐ¼¸¸ö·þÎñÏîÄ¿
+	 * ï¿½ï¿½Ñ¯ï¿½Ì¼Òµï¿½Ä³ï¿½ï¿½ÏµÍ³ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
 	 * 
 	 * @param providerId
 	 * @param sysItemId
@@ -241,6 +242,9 @@ public class ProviderItemDaoImpl implements ProviderItemDao {
 				item.setPrice(rs.getFloat("price"));
 				item.setPriceOld(rs.getFloat("price_old"));
 				item.setBusiness(rs.getInt("business_count"));
+				DecimalFormat df = new DecimalFormat("###,###.00");
+				item.setPriceStr(df.format(rs.getFloat("price")));
+				item.setPriceOldStr(df.format(rs.getFloat("price_old")));
 				return item;
 			}
 
